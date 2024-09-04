@@ -3,6 +3,7 @@ import {FaLeaf} from "react-icons/fa"
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import MobileNavBar from './mobileNavBar';
+import {motion} from "framer-motion"
 
 const Nav = () => {
   const navBarMenu = [
@@ -36,7 +37,11 @@ const Nav = () => {
   return (
     <>
       <nav>
-          <div className="container flex justify-between items-center py-6 md:pt-4">
+          <motion.div
+          initial = {{opacity:0}}
+          animate = {{opacity:1}}
+          transition={{duration:1,delay:0.5}}
+          className="container flex justify-between items-center py-6 md:pt-4">
             {/* logo section */}
             <div className='text-2xl flex items-center gap-2 font-bold uppercase'>
                 <p className='text-primary'>Fruit </p>
@@ -61,7 +66,7 @@ const Nav = () => {
             }}>
               <IoMenu className='text-4xl'/>
             </div>
-          </div>
+          </motion.div>
       </nav>
       <MobileNavBar open={open}/>
       </>
